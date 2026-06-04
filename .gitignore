@@ -1,5 +1,12 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿
+.vs/
+*.suo
+*.user
+*.vsidx
+*.suo
 
-/Ex04 Ofir 207438532 Yonatan 314831983/Ex04.Menus.Events/.vs
+[Bb]in/
+[Oo]bj/
+
+
+.DS_Store
