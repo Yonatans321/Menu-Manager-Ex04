@@ -53,7 +53,12 @@ namespace Ex04.Menus.Events
             }
         }
 
-        public void OnSelected()
+        public void DoWhenSelected()
+        {
+            OnSelected();
+        }
+
+        protected virtual void OnSelected()
         {
            
             if (Selected != null)
