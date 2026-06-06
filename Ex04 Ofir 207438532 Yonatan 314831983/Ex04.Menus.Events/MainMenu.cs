@@ -75,7 +75,7 @@ namespace Ex04.Menus.Events
 
                     if (selectedItem.IsLeaf)
                     {
-                        selectedItem.OnSelected();
+                        selectedItem.DoWhenSelected();
                         Console.WriteLine();
                     }
                     else
