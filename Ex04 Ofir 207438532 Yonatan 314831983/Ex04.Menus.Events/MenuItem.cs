@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Events
 {
     public class MenuItem
     {
         private string m_Title;
         private readonly List<MenuItem> r_SubMenuItems = new List<MenuItem>();
-        private readonly List<IMenuSelectionListener> r_MenuListeners = new List<IMenuSelectionListener>();
+        public event Action<MenuItem> Selected;
 
         public MenuItem(string i_Title)
         {
@@ -20,6 +20,7 @@ namespace Ex04.Menus.Interfaces
             {
                 return m_Title;
             }
+
             set
             {
                 m_Title = value;
@@ -38,19 +39,10 @@ namespace Ex04.Menus.Interfaces
         {
             r_SubMenuItems.Add(i_Item);
         }
+
         public void RemoveSubItem(MenuItem i_Item)
         {
             r_SubMenuItems.Remove(i_Item);
-        }
-
-        public void AddListener(IMenuSelectionListener i_Listener)
-        {
-            r_MenuListeners.Add(i_Listener);
-        }
-
-        public void RemoveListener(IMenuSelectionListener i_Listener)
-        {
-            r_MenuListeners.Remove(i_Listener);
         }
 
         public bool IsLeaf
@@ -61,12 +53,12 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-
         public void OnSelected()
         {
-            foreach (IMenuSelectionListener listener in r_MenuListeners)
+           
+            if (Selected != null)
             {
-                listener.ReportSelection();
+                Selected.Invoke(this);
             }
         }
     }

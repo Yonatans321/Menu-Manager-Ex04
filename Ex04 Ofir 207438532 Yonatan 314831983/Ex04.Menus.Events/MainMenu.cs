@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Events
 {
     public class MainMenu
     {
@@ -19,7 +18,7 @@ namespace Ex04.Menus.Interfaces
             MenuItem currentMenu;
             bool isRoot;
             string exitOrBackText;
-            string promptSuffix;
+            string showExitOrGoBack;
             int userChoice;
             MenuItem selectedItem;
             bool isMenuRunning = true;
@@ -44,16 +43,16 @@ namespace Ex04.Menus.Interfaces
                 if (isRoot)
                 {
                     exitOrBackText = "Exit";
-                    promptSuffix = "exit";
+                    showExitOrGoBack = "exit";
                 }
                 else
                 {
                     exitOrBackText = "Back";
-                    promptSuffix = "go back";
+                    showExitOrGoBack = "go back";
                 }
 
                 Console.WriteLine($"0. {exitOrBackText}");
-                Console.WriteLine($"Please enter your choice (1-{currentMenu.SubMenuItems.Count} or 0 to {promptSuffix}):");
+                Console.WriteLine($"Please enter your choice (1-{currentMenu.SubMenuItems.Count} or 0 to {showExitOrGoBack}):");
                 Console.Write(">> ");
 
                 userChoice = getValidChoice(currentMenu.SubMenuItems.Count);
@@ -104,7 +103,6 @@ namespace Ex04.Menus.Interfaces
 
             return parsedChoice;
         }
-
 
     }
 }
