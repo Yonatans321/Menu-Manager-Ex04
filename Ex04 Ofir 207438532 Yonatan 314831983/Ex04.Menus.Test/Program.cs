@@ -69,10 +69,6 @@ namespace Ex04.Menus.Test
             menuManager.Show();
         }
 
-
-
-
-
         private static void showDateItem_Selected(EventsMenu.MenuItem i_Sender)
         {
             Console.WriteLine($"> Current Date is {DateTime.Now.ToString("dd/MM/yyyy")}");
@@ -86,8 +82,6 @@ namespace Ex04.Menus.Test
         private static void countCapitalsItem_Selected(EventsMenu.MenuItem i_Sender)
         {
             int capitalsCount = 0;
-
-            Console.WriteLine("Please enter your text:");
             string userInput = Console.ReadLine();
 
             if (userInput != null)

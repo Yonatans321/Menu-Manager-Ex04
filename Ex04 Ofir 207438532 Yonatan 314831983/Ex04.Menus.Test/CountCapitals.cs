@@ -8,7 +8,6 @@ namespace Ex04.Menus.Test
         public void ReportSelection()
         {
             int capitalsCounter = 0;
-            Console.WriteLine("Please enter your text:");
             string userInput = Console.ReadLine();
 
             if (userInput != null)

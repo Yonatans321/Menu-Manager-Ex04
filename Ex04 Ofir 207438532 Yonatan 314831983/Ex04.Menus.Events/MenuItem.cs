@@ -60,7 +60,6 @@ namespace Ex04.Menus.Events
 
         protected virtual void OnSelected()
         {
-           
             if (Selected != null)
             {
                 Selected.Invoke(this);

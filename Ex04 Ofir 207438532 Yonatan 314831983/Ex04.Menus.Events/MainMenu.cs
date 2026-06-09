@@ -75,6 +75,7 @@ namespace Ex04.Menus.Events
 
                     if (selectedItem.IsLeaf)
                     {
+                        Console.Clear();
                         selectedItem.DoWhenSelected();
                         Console.WriteLine();
                     }
@@ -103,6 +104,5 @@ namespace Ex04.Menus.Events
 
             return parsedChoice;
         }
-
     }
 }

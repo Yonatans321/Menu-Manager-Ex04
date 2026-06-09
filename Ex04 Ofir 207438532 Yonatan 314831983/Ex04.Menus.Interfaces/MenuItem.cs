@@ -38,6 +38,7 @@ namespace Ex04.Menus.Interfaces
         {
             r_SubMenuItems.Add(i_Item);
         }
+
         public void RemoveSubItem(MenuItem i_Item)
         {
             r_SubMenuItems.Remove(i_Item);
